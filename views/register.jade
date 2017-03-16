@@ -1,0 +1,62 @@
+extends layout
+
+block content
+    .container
+      .row.text-center
+        .col-md-12
+          br
+          br
+          h2  To-Do List : Register
+          h5 ( Register yourself to get access )
+          br
+      .row
+        .col-md-4.col-md-offset-4.col-sm-6.col-sm-offset-3.col-xs-10.col-xs-offset-1
+          .panel.panel-default
+            .panel-heading
+              strong   New User ? Register Yourself 
+            .panel-body
+              form(role='form', action="/register",method="post")
+                h5
+                  strong Username
+                .form-group.input-group
+                  span.input-group-addon
+                    i.fa.fa-tag
+                  input.form-control(type='text', name="username", placeholder='Your Desired Username' required='')
+
+                h5
+                  strong Email Address
+                .form-group.input-group
+                  span.input-group-addon @
+                  input.form-control(type='text', name="email", placeholder='Your Email Address' required='')
+
+                h5
+                  strong First Name
+                .form-group.input-group
+                  span.input-group-addon
+                    i.fa.fa-circle-o-notch
+                  input.form-control(type='text', name="firstname", placeholder='Your First Name' required='')
+
+                h5
+                  strong Last Name
+                .form-group.input-group
+                  span.input-group-addon
+                    i.fa.fa-circle-o-notch
+                  input.form-control(type='text', name="lastname", placeholder='Your Last Name' required='')
+
+                h5
+                  strong Password
+                .form-group.input-group
+                  span.input-group-addon
+                    i.fa.fa-lock
+                  input.form-control(type='password', name="password", placeholder='Your Password' required='')
+                center
+                  if (errorRegistration)
+                    h4  #{errorRegistration}
+                  br
+                  button.btn.btn-primary(type='submit')
+                    i.fa.fa-paper-plane-o
+                    | &nbsp; Register Me
+                  hr
+                  h5
+                    | Already Registered ?  
+                    a(href='/') Login here

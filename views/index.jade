@@ -1,0 +1,21 @@
+extends layout
+
+block content
+  .container
+     if (user)
+        .row.text-center
+            .col-md-12
+              br
+              br
+              h1  Hi, #{user.firstName}!
+              brx
+              h5 You are currently logged in as : #{user.email}
+              br
+              form(role='form', action="/logout", method="get")
+                button.btn.btn-primary(type="submit")
+                    i.fa.fa-sign-out
+                    | &nbsp; Logout
+        br
+        hr
+        br
+        #root
