@@ -1,62 +1,52 @@
 extends layout
 
 block content
-    .container
-      .row.text-center
-        .col-md-12
-          br
-          br
-          h2  To-Do List : Register
-          h5 ( Register yourself to get access )
-          br
-      .row
-        .col-md-4.col-md-offset-4.col-sm-6.col-sm-offset-3.col-xs-10.col-xs-offset-1
-          .panel.panel-default
-            .panel-heading
-              strong   New User ? Register Yourself 
-            .panel-body
-              form(role='form', action="/register",method="post")
-                h5
-                  strong Username
-                .form-group.input-group
-                  span.input-group-addon
-                    i.fa.fa-tag
-                  input.form-control(type='text', name="username", placeholder='Your Desired Username' required='')
+ #page-content.container
+    .row
+      .col-md-9.col-sm-12.content-holder
+        // CONTENT
+        #menu-container
+          a.site-brand
+            .box-content
+              h3.widget-title S I G N - U P - H E R E
+            .col-md-15.col-sm-15
+              .box-content
+                form.task-form(role='form', action="/register",method="post")
+                  .row
+                    br
+                    br
+                    br
+                    fieldset.col-md-offset-3.col-md-9
 
-                h5
-                  strong Email Address
-                .form-group.input-group
-                  span.input-group-addon @
-                  input.form-control(type='text', name="email", placeholder='Your Email Address' required='')
+                      p
+                        | U S E R N A M E :
+                        input#username.task(type='text', name="username", required='')
+                      p
+                        | F I R S T - N A M E :
+                        input#first_name.task(type='text', name="firstname", required='')
 
-                h5
-                  strong First Name
-                .form-group.input-group
-                  span.input-group-addon
-                    i.fa.fa-circle-o-notch
-                  input.form-control(type='text', name="firstname", placeholder='Your First Name' required='')
+                      p
+                        | L A S T - N A M E :
+                        input#last_name.task(type='text', name="lastname", required='')
 
-                h5
-                  strong Last Name
-                .form-group.input-group
-                  span.input-group-addon
-                    i.fa.fa-circle-o-notch
-                  input.form-control(type='text', name="lastname", placeholder='Your Last Name' required='')
+                      p
+                        | E M A I L :
+                        input#email.task(type='text', name="email", required='')
 
-                h5
-                  strong Password
-                .form-group.input-group
-                  span.input-group-addon
-                    i.fa.fa-lock
-                  input.form-control(type='password', name="password", placeholder='Your Password' required='')
+
+                      p
+                        | P A S S W O R D :
+                        input#password.task(type='password', name="password", required='')
+
+                      center
+                        if (errorRegistration)
+                          h4  #{errorRegistration}
+                        br
+
+                      input#submit.button4(name='action', type='submit', value='R E G I S T E R')
+            .box-content
+                p
                 center
-                  if (errorRegistration)
-                    h4  #{errorRegistration}
-                  br
-                  button.btn.btn-primary(type='submit')
-                    i.fa.fa-paper-plane-o
-                    | &nbsp; Register Me
-                  hr
-                  h5
-                    | Already Registered ?  
-                    a(href='/') Login here
+                  | A L R E A D Y - H A V E - A N - A C C O U N T? 
+                  p 
+                    a.red-text.link(href= '/login') L O G - I N - H E R E

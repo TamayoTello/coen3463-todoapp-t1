@@ -1,45 +1,59 @@
 doctype html
-html(xmlns='http://www.w3.org/1999/xhtml')
-    head
-        meta(charset='utf-8')
-        meta(name='viewport', content='width=device-width, initial-scale=1.0')
-        title= title
-        // BOOTSTRAP STYLES
-        link(href='../assets/css/bootstrap.css', rel='stylesheet')
-        // FONTAWESOME STYLES
-        link(href='../assets/css/font-awesome.css', rel='stylesheet')
-        // MORRIS CHART STYLES
-        link(href='../assets/js/morris/morris-0.4.3.min.css', rel='stylesheet')
-        // CUSTOM STYLES
-        link(href='../assets/css/custom.css', rel='stylesheet')
-        // GOOGLE FONTS
-        link(href='http://fonts.googleapis.com/css?family=Open+Sans', rel='stylesheet', type='text/css')
-    body
-        block content
-        script(src='http://code.jquery.com/jquery.js')
-        script(src='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js')
+html.no-js
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    title Team Juan
+    meta(name='description', content='')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
 
+    link(rel='stylesheet', href='../stylesheets/normalize.css')
+    link(rel='stylesheet', href='../stylesheets/font-awesome.css')
+    link(rel='stylesheet', href='../stylesheets/bootstrap.min.css')
+    link(rel='stylesheet', href='../stylesheets/style.css')
+    script(src='../javascripts/vendor/modernizr-2.6.2.min.js')
 
-        //if lte IE 8
-        script(type='text/javascript', src='/javascripts/ie/respond.min.js')
-        script(type='text/javascript', src='/javascripts/main.js')
-        script(type='text/javascript', src='/build/bundle.js')
+  body
+    .site-bg
+    .site-bg-overlay
 
-        // SCRIPTS -AT THE BOTOM TO REDUCE THE LOAD TIME
-        // JQUERY SCRIPTS
-        script(src='../assets/js/jquery-1.10.2.js')
-        // BOOTSTRAP SCRIPTS
-        script(src='../assets/js/bootstrap.min.js')
-        // METISMENU SCRIPTS
-        script(src='../assets/js/jquery.metisMenu.js')
-        // MORRIS CHART SCRIPTS
-        script(src='../assets/js/morris/raphael-2.1.0.min.js')
-        script(src='../assets/js/morris/morris.js')
-        // CUSTOM SCRIPTS
-        script(src='../assets/js/custom.js')
+    if (!user)
+      .top-header
+        .container
+          .row
+            .col-md-6.col-sm-6.col-xs-12
+              p.phone-info
+                | T O - D O - L I S T
+            .col-md-6.col-sm-6.col-xs-12
+              .social-icons
+                ul
+                  li
+                    a(href='/') H O M E
+    else
+      .top-header
+        .container
+          .row
+            .col-md-6.col-sm-6.col-xs-12
+              p.phone-info
+                | T O - D O - L I S T
+            .col-md-6.col-sm-6.col-xs-12
+              .social-icons
+                ul
+                  li
+                    a(href='/') H O M E
+                  li
+                    a(href='/logout') L O G - O U T
+                    
+  block content
+  .site-footer
+    .container
+      .row
+        .col-md-12.text-center
+          p
+            | TEAM JUAN: Romina Bañadera & Tello Tamayo
 
-        center
-            hr
-            footer
-                p 
-                  | Software Engineering | Engr. Gino Tria | Front-End and Back-End by Soriano (COEN3463-T2) © 2017                                            
+          script(src='../javascripts/vendor/jquery-1.10.2.min.js')
+          script(src='../javascripts/plugins.js')
+          script(src='../javascripts/main.js')
+          script(type='text/javascript', src= '../javascripts/validation.js')
+          script(type='text/javascript', src= '../build/bundle.js')

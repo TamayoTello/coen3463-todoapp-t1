@@ -17,7 +17,7 @@ const router = express.Router();
 var Promise = require('bluebird');
 var app = express();
 
-var mdbUrl = 'mongodb://admin:password@ds145168.mlab.com:45168/kickstarters';
+var mdbUrl = 'mongodb://admin:admin@ds161018.mlab.com:61018/coen3463t-t1';
 var options = { server:  { socketOptions: { keepAlive:        300000,
                                             connectTimeoutMS: 30000
                                           }

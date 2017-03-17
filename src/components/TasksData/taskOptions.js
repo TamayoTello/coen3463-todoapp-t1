@@ -114,104 +114,95 @@ class TaskOptions extends Component {
                         editingTask == false
                             ?
                             <center>
-                                <div className="col-md-6 col-sm-6">
-                                    <div className="panel panel-default">
-                                        <div className="panel-body">
-                                            <div className="panel panel-default">
-                                                <div className="panel-body">
-                                                    <section>
-                                                        <header>
-                                                         {
-                                                            userTask.isComplete == false ?
-                                                                <h3>
-                                                                    {userTask.name}
-                                                                </h3>
-                                                                :
-                                                                <div>
-                                                                    <h3>
-                                                                        <strike>
-                                                                            {userTask.name}
-                                                                        </strike>
-                                                                    </h3>
-                                                                </div>
-                                                         }
-                                                        <br/>
-                                                            <button className="btn btn-edit" onClick={handleEditTaskState}>
-                                                                <i className="fa fa-edit"></i> Edit Task
-                                                            </button>
-                                                            &nbsp;
-
-                                                             {
-                                                                userTask.isComplete == false
-                                                                ?
-                                                                <button className="btn btn-success" onClick={handleEditTaskStatus}>
-                                                                    <i className="fa fa-check"></i> Finished
-                                                                </button>
-                                                                :
-                                                                <button className="btn btn-warning" onClick={handleEditTaskStatus}>
-                                                                    <i className="fa fa-times"></i> Unfinished
-                                                                </button>
-                                                             }
-
-                                                            &nbsp;
-                                                            <button className="btn btn-danger" onClick={handleDeleteTask}>
-                                                                    <i className="fa fa-exclamation"></i> Delete Task
-                                                            </button>
-                                                        </header>
-                                                    </section>
-                                                </div>
-                                            </div> 
-
-                                            <div className = "row">
-                                                <div className = "col-md-12">
+                                <div id="menu-container">
+                                    <a className="site-brand">
+                                        <div className="col-md-15 col-sm-15">
+                                            <div className="box-content">
+                                                <div className="row text-center">
                                                     {
                                                         userTask.isComplete == false ?
-                                                            <div>
-                                                                { tasksDetails() }
-                                                            </div>
-                                                            :
-                                                            <div>
+                                                        <h3 className="widget-title">
+                                                            {userTask.name}
+                                                        </h3>
+                                                        :
+                                                        <div>
+                                                            <h3 className="widget-title">
                                                                 <strike>
-                                                                    { tasksDetails() }
+                                                                    {userTask.name}
                                                                 </strike>
-                                                                
-                                                            </div>
-                                                    }
+                                                            </h3>
+                                                        </div>
+                                                     }
+                                                    <br/>
+                                                    <button className="button3" onClick={handleEditTaskState}>
+                                                        <i className="fa fa-edit"></i>
+                                                    </button>
+                                                    &nbsp;
+
+                                                     {
+                                                        userTask.isComplete == false
+                                                        ?
+                                                        <button className="button3" onClick={handleEditTaskStatus}>
+                                                            <i className="fa fa-check"></i>
+                                                        </button>
+                                                        :
+                                                        <button className="button3" onClick={handleEditTaskStatus}>
+                                                            <i className="fa fa-times"></i>
+                                                        </button>
+                                                     }
+
+                                                    &nbsp;
+                                                    <button className="button3" onClick={handleDeleteTask}>
+                                                        <i className="fa fa-exclamation"></i>
+                                                    </button>
+                                                </div>
+
+                                                <div className="row text-center">
+                                                 {
+                                                    userTask.isComplete == false ?
+                                                    <div>
+                                                        { tasksDetails() }
+                                                    </div>
+                                                    :
+                                                    <div>
+                                                        <strike>
+                                                            { tasksDetails() }
+                                                        </strike>                                            
+                                                    </div>
+                                                 }
                                                 </div>
                                             </div>
-                                        </div>  
-                                    </div>
-                                    <br/>
-                                    <br/>
+                                        </div>
+                                    </a>
                                 </div>
                             </center>
                             :
                             <center>
                             <form>
-                                <div className="col-md-6 col-sm-6">
-                                    <div className="panel panel-default">
-                                        <div className="panel-body">
-                                            <div className="panel panel-default">
-                                                <div className="panel-body">
-                                                    <section>
-                                                        <header>
-                                                            <h4><strong>Enter New Task Name</strong></h4>
-                                                            <br/>
-                                                            <input className="form-controlv2" ref="taskName" type="text" placeholder="Task Name" defaultValue={userTask.name}/>
-                                                            <br/>
-                                                            <button className="btn btn-edit" onClick={handleEditTaskName}>
-                                                                    <i className="fa fa-edit"></i> Update Task
-                                                            </button>
-                                                            &nbsp;
-                                                            <button className="btn btn-default" onClick={handleEditTaskState}>
-                                                                 Cancel
-                                                            </button>
-                                                        </header>
-                                                    </section>
+                                <div id="menu-container">
+                                    <a className="site-brand">
+                                        <div className="col-md-15 col-sm-15">
+                                            <div className="box-content">
+                                                <div className="row text-center">
+                                                    <h3 className="widget-title">
+                                                        Task Name
+                                                    </h3>
+                                                    <br/>
+                                                    <div className="form-group">
+                                                        <input className="form-control" ref="taskName" type="text" placeholder="Task Name" defaultValue={userTask.name}/>
+                                                    </div>
+                                                    <br/>
+                                                    <button className="button3" onClick={handleEditTaskName}>
+                                                        <i className="fa fa-edit"></i>
+                                                    </button>
+                                                    &nbsp;
+                                                    <button className="button3" onClick={handleEditTaskState}>
+                                                        Cancel
+                                                    </button>
                                                 </div>
                                             </div>
-                                        </div> 
-                                    </div>  
+                                        </div>
+                                    </a>
                                 </div>
                                 <br/>
                             </form>

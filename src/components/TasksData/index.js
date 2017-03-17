@@ -93,8 +93,8 @@ class TasksData extends Component {
                         <article>
                             <form>
                                 <header>
-                                    <div className="text-box">
-                                        <p className="main-text">
+                                    <div>
+                                        <p>
                                             { userTasks.tasks.filter(userTask => userTask.isComplete == true).length } &nbsp; 
 
                                             {
@@ -103,7 +103,7 @@ class TasksData extends Component {
 
                                             &nbsp; Completed
                                         </p>
-                                        <p className="text-muted">
+                                        <p>
                                             { userTasks.tasks.length - userTasks.tasks.filter(userTask => userTask.isComplete == true).length}
                                               &nbsp;
                                               Remaining
@@ -112,8 +112,8 @@ class TasksData extends Component {
                                         </p>
                                     </div>
                                     <br/>
-                                    <div className = "text-box">
-                                        <div className = "main-text">
+                                    <div>
+                                        <div>
                                             <div>
                                                 <select className = "form-control" value={tasksFilter} onChange={handleTasksFilter}>
                                                     <option value="allTasks">All Tasks</option>
@@ -125,7 +125,7 @@ class TasksData extends Component {
                                             <br/>
                                         
                                             <div>
-                                                <button className="btn btn-edit" onClick={handleAddTask}>
+                                                <button className="button3" onClick={handleAddTask}>
                                                    <i className="fa fa-pencil"></i> Add New Task
                                                 </button>
 
@@ -133,7 +133,7 @@ class TasksData extends Component {
 
                                                 {
                                                     tasksFilter == 'openTasks' || userTasks.tasks.filter(userTask =>userTask.isComplete == true).length == 0 ? ""
-                                                    : <button className="btn btn-danger" onClick={handleDeleteFinishedTask}>
+                                                    : <button className="button3" onClick={handleDeleteFinishedTask}>
                                                     <i className="fa fa-times"></i>&nbsp;<i className="fa fa-reorder"></i> Delete Finished Tasks
                                                     </button>
                                                 }
