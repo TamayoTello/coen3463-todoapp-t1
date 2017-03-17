@@ -94,7 +94,7 @@ class TasksData extends Component {
                             <form>
                                 <header>
                                     <div>
-                                        <p>
+                                        <h3 className="widget-title">
                                             { userTasks.tasks.filter(userTask => userTask.isComplete == true).length } &nbsp; 
 
                                             {
@@ -102,13 +102,9 @@ class TasksData extends Component {
                                             }
 
                                             &nbsp; Completed
-                                        </p>
+                                        </h3>
                                         <p>
-                                            { userTasks.tasks.length - userTasks.tasks.filter(userTask => userTask.isComplete == true).length}
-                                              &nbsp;
-                                              Remaining
-                                              &nbsp;
-                                              ( &nbsp; { userTasks.tasks.length } &nbsp; Total &nbsp;)
+                                            &nbsp; { userTasks.tasks.length } &nbsp; Total &nbsp;
                                         </p>
                                     </div>
                                     <br/>
